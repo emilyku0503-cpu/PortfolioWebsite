@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Yeonji Ku | Portfolio</title>
+    <meta name="description" content="Portfolio website for Yeonji Ku, a 3D artist." />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <main class="page page-home">
+      <header class="hero-section" aria-labelledby="hero-title">
+        <div class="hero-content">
+          <h1 id="hero-title" class="hero-title">Hi, I’m Yeonji Ku<br />a 3D Artist.</h1>
+        </div>
+
+        <div class="hero-visual">
+           <img
+            class="hero-image"
+            class="hero-image"
+            src="assets/images/hero.png"
+            alt="3D artwork"
+  />
+        </div>
+      </header>
+
+      <section class="portfolio-section" aria-labelledby="portfolio-title">
+        <header class="section-header">
+          <h2 id="portfolio-title" class="section-title">Portfolio</h2>
+        </header>
+
+        <div class="project-grid">
+          <article class="project-card project-card--isometric">
+            <a href="project.html?project=cafe" class="card-content" aria-label="3D Isometric Cafe">
+              <img class="card-image" src="https://www.figma.com/api/mcp/asset/43681f08-5679-42a9-89d3-600a88898dcb.png" alt="3D Isometric Cafe" />
+              <span class="card-dim" aria-hidden="true"></span>
+              <span class="card-title" aria-label="Isometric Cafe">Isometric Cafe</span>
+            </a>
+          </article>
+
+          <article class="project-card project-card--scillica">
+            <a href="project.html?project=scillica" class="card-content" aria-label="Re:Scillica Environment">
+              <img class="card-image" src="https://www.figma.com/api/mcp/asset/d07d2944-a771-45ec-8910-0a87dd810cdb.png" alt="Re:Scillica Environment" />
+              <span class="card-dim" aria-hidden="true"></span>
+              <span class="card-title" aria-label="Re:Scillica Environment">Re:Scillica Environment</span>
+            </a>
+          </article>
+
+          <article class="project-card project-card--inova">
+            <a href="project.html?project=inova" class="card-content" aria-label="INOVA equipment">
+              <img class="card-image" src="https://www.figma.com/api/mcp/asset/7c4243d6-17ce-447a-8cfe-a158c3fc316d.png" alt="INOVA equipment" />
+              <span class="card-dim" aria-hidden="true"></span>
+              <span class="card-title" aria-label="INOVA equipment">INOVA equipment</span>
+            </a>
+          </article>
+
+          <article class="project-card project-card--portrait">
+            <a href="project.html?project=self-portrait" class="card-content" aria-label="Self-Portrait">
+              <img class="card-image" src="https://www.figma.com/api/mcp/asset/f031ed8e-7b94-4465-9f60-af309570edb1.png" alt="Self-Portrait" />
+              <span class="card-dim" aria-hidden="true"></span>
+              <span class="card-title" aria-label="Self-Portrait">Self-Portrait</span>
+            </a>
+          </article>
+        </div>
+      </section>
+
+      <footer class="site-footer" aria-labelledby="footer-title">
+        <header class="footer-header">
+          <h2 id="footer-title" class="footer-title">Let’s work together</h2>
+        </header>
+
+        <div class="social-links" aria-label="Social links">
+          <a class="social-link" href="#" aria-label="Email">
+            <span class="social-icon social-icon--mail" aria-hidden="true"></span>
+          </a>
+          <a class="social-link" href="#" aria-label="LinkedIn">
+            <span class="social-icon social-icon--linkedin" aria-hidden="true"></span>
+          </a>
+        </div>
+      </footer>
+    </main>
+
+    <script src="script.js"></script>
+  </body>
+</html>
