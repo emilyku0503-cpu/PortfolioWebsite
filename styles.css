@@ -16,7 +16,7 @@ html {
 
 body {
   margin: 0;
-  font-family: "Inter", "Segoe UI", sans-serif;
+  font-family: "Inter", "Inter Tight", "Segoe UI", sans-serif;
   background: var(--page-bg);
   color: var(--text);
 }
@@ -53,24 +53,31 @@ img {
 
 .hero-content {
   flex: 0 0 40%;
-  padding-top: 68px;
 }
 
 .hero-title {
   margin: 0;
   font-size: clamp(3.3rem, 4vw, 5.55rem);
-  line-height: 0.93;
+  line-height: 1.4;
   letter-spacing: -0.06em;
-  font-weight: 400;
+  font-weight: 600;
   color: var(--text);
 }
 
 .hero-visual {
-  position: relative;
-  width: 950px;
-  height: 650px;
+  flex: 0 1 950px;
+  width: min(49vw, 950px);
+  height: auto;
+
   margin-left: 40px;
   transform: translateY(70px);
+}
+
+.hero-image {
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: contain;
 }
 
 
@@ -84,7 +91,7 @@ img {
 
 .section-title {
   margin: 0;
-  font-size: clamp(3rem, 3vw, 5rem);
+  font-size: 42px;
   line-height: 1;
   letter-spacing: -0.06em;
   font-weight: 600;
@@ -92,8 +99,8 @@ img {
 
 .project-grid {
   display: grid;
-  grid-template-columns: repeat(2, minmax(0, 820px));
-  gap: 40px;
+  grid-template-columns: repeat(2, minmax(0, 600px));
+  gap: 60px;
   width: 1680px;
   max-width: 100%;
 }
@@ -101,7 +108,7 @@ img {
 .project-card {
   position: relative;
   width: 100%;
-  height: 733px;
+  height: 600px;
   border-radius: 40px;
   overflow: hidden;
   background: var(--card-bg);
@@ -135,12 +142,12 @@ img {
   position: absolute;
   left: 40px;
   right: 40px;
-  bottom: 60px;
+  bottom: 40px;
   display: flex;
   align-items: flex-end;
   height: 200px;
   color: #fff;
-  font-size: 50px;
+  font-size: 40px;
   font-weight: 500;
   line-height: 1;
   letter-spacing: -0.06em;
@@ -174,7 +181,7 @@ img {
 
 .footer-title {
   margin: 0;
-  font-size: clamp(2.5rem, 2.4vw, 4rem);
+  font-size: 30px;
   line-height: 1;
   letter-spacing: -0.06em;
   font-weight: 600;
@@ -199,52 +206,12 @@ img {
 }
 
 .social-icon {
-  position: relative;
+  width: 48px;
+  height: 48px;
   display: block;
+  object-fit: contain;
 }
 
-.social-icon--mail {
-  width: 38px;
-  height: 30px;
-  border: 3px solid var(--text);
-  border-radius: 6px;
-}
-
-.social-icon--mail::before,
-.social-icon--mail::after {
-  content: "";
-  position: absolute;
-  left: 50%;
-  width: 18px;
-  height: 3px;
-  background: var(--text);
-  transform: translateX(-50%) rotate(28deg);
-  top: 7px;
-}
-
-.social-icon--mail::after {
-  transform: translateX(-50%) rotate(-28deg);
-  top: 17px;
-}
-
-.social-icon--linkedin {
-  width: 18px;
-  height: 18px;
-  border-left: 5px solid var(--text);
-  border-bottom: 5px solid var(--text);
-  transform: rotate(-45deg);
-  border-radius: 3px;
-}
-
-.social-icon--linkedin::before {
-  content: "";
-  position: absolute;
-  left: 4px;
-  top: 2px;
-  width: 5px;
-  height: 14px;
-  background: var(--text);
-}
 
 .project-page {
   background: var(--page-bg);
@@ -298,53 +265,57 @@ img {
 }
 
 .project-gallery {
+  width: 1680px;
+  max-width: calc(100vw - 240px);
+  margin: 150px auto 0;
+
   display: flex;
   flex-direction: column;
   gap: 40px;
-  margin-top: 150px;
 }
 
+/* 위쪽 이미지 2개 */
 .gallery-grid {
-  display: flex;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
   gap: 40px;
+  width: 100%;
 }
 
+/* 아래쪽 wide 이미지 */
 .gallery-grid--full {
   display: block;
+  width: 100%;
 }
 
+/* 위쪽 이미지 */
 .project-image {
-  width: 820px;
-  height: 994px;
-  border-radius: 0;
+  display: block;
+  width: 100%;
+  height: auto;
+
+  aspect-ratio: 820 / 994;
+  object-fit: cover;
+
   background: var(--card-bg);
 }
 
+/* 아래쪽 이미지 */
 .project-image--wide {
-  width: 1680px;
-  height: 994px;
+  width: 100%;
+  height: auto;
+
+  aspect-ratio: 1680 / 994;
+  object-fit: cover;
 }
 
 @media (max-width: 1100px) {
-  .hero-section {
-    flex-direction: column;
-    align-items: flex-start;
-    justify-content: center;
-    min-height: 900px;
-    padding: 80px 32px 0;
-  }
 
   .hero-content {
     width: 100%;
     padding-top: 0;
   }
 
-  .hero-visual {
-    width: 100%;
-    max-width: 760px;
-    margin-left: 0;
-    transform: none;
-  }
 
   .portfolio-section,
   .site-footer,
@@ -373,9 +344,6 @@ img {
     font-size: 3.2rem;
   }
 
-  .hero-visual {
-    height: 340px;
-  }
 
   .ring--blue {
     left: 30px;
