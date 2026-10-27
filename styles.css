@@ -52,7 +52,7 @@ img {
 }
 
 .hero-content {
-  flex: 0 0 40%;
+  flex: 0 1 40%;
 }
 
 .hero-title {
@@ -62,6 +62,42 @@ img {
   letter-spacing: -0.06em;
   font-weight: 600;
   color: var(--text);
+}
+
+.hero-bio {
+  margin-top: 24px;
+  color: var(--muted);
+  font-size: clamp(1rem, 1.1vw, 1.3rem);
+  line-height: 1.55;
+  letter-spacing: -0.02em;
+}
+
+.hero-bio p {
+  margin: 0 0 1.15em;
+}
+
+.hero-bio p:last-child {
+  margin-bottom: 0;
+}
+
+.hero-resume-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 52px;
+  margin-top: 28px;
+  padding: 0 28px;
+  border: 1px solid var(--text);
+  border-radius: 999px;
+  font-size: 1rem;
+  font-weight: 500;
+  transition: color 0.2s ease, background-color 0.2s ease;
+}
+
+.hero-resume-button:hover,
+.hero-resume-button:focus-visible {
+  color: #fff;
+  background: var(--text);
 }
 
 .hero-visual {
@@ -304,11 +340,25 @@ img {
 
 @media (max-width: 1100px) {
 
-  .hero-content {
-    width: 100%;
-    padding-top: 0;
+  .hero-section {
+    min-height: 0;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 48px;
+    padding: 100px 32px 80px;
   }
 
+  .hero-content {
+    width: 100%;
+    flex: none;
+  }
+
+  .hero-visual {
+    align-self: center;
+    width: min(100%, 700px);
+    margin-left: 0;
+    transform: none;
+  }
 
   .portfolio-section,
   .site-footer,
@@ -329,12 +379,16 @@ img {
 
 @media (max-width: 768px) {
   .hero-section {
-    min-height: 680px;
-    padding-top: 60px;
+    gap: 36px;
+    padding: 72px 24px 64px;
   }
 
   .hero-title {
-    font-size: 3.2rem;
+    font-size: clamp(2.6rem, 10vw, 3.2rem);
+  }
+
+  .hero-bio {
+    margin-top: 20px;
   }
 
 

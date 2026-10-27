@@ -43,7 +43,7 @@ const projects = {
 
     'self-portrait': {
         title: 'Self-Portrait',
-        date: '2026.10.10',
+
         description: 'Created a 3D self-portrait through modeling, retopology, UV mapping, and texturing.',
 
         thumbnail: 'assets/images/portrait.png',
